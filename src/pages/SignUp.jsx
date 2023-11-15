@@ -1,24 +1,14 @@
 import { Button, Box, TextField, Link } from "@mui/material";
 import React from "react";
 import netImage from "../images/net.png";
+import Navbar from "../navbars/Navbar";
 
 const SignUp = () => {
   return (
     <>
+      <Navbar/>
       <div className="w-full h-full bg-white">
         <div className="flex flex-col w-full h-full">
-          <div className="flex flex-row justify-between border">
-            <img src={netImage} alt="Network" className="w-[210px] h-[110px]" />
-            <div className="w-[190px] h-200px mt-9 mr-5">
-              <Link
-                href="/signin1"
-                underline="hover"
-                sx={{ color: "#1A4755", fontWeight: "bold", fontSize: "20px" }}
-              >
-                {"Sing In"}
-              </Link>
-            </div>
-          </div>
           <div className="w-full h-[640px] flex flex-row justify-center">
             <div className="w-[800px] h-[470px] flex flex-row justify-center mt-[35px]">
               <div className="h-full w-[420px]">

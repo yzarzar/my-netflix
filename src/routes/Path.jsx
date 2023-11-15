@@ -13,7 +13,7 @@ const Path = () => {
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/signin1' element={<SignIn/>}/>
         <Route path='/CreateAcc' element={<CreateAcc/>}/>
-        <Route path='/signinFromCreateAcc' element={<SignIn/>}/>
+        <Route path='/signinFromCreateAcc' element={<SignUp/>}/>
       </Routes>
     </>
   )
