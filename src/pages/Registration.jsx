@@ -2,8 +2,13 @@ import React from "react";
 import Navbar from "../navbars/Navbar";
 import deviceImage from '../images/optndev.png';
 import {Button} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
-const CreateAcc = () => {
+const Registration = () => {
+    const nav = useNavigate();
+    const buttonHandler = () => {
+        nav('/regForm')
+    }
     return (
         <>
             <Navbar/>
@@ -12,7 +17,7 @@ const CreateAcc = () => {
                     <div className='flex flex-row justify-center'>
                         <img src={deviceImage} alt="Devices" className='w-[260px] h-[65px] mt-[100px]'/>
                     </div>
-                    <div className='w-full h-auto flex flex-col'>
+                    <div className='w-full flex flex-col'>
                         <div className='w-full h-full flex flex-row justify-center mt-[40px]'>
                             <span className="text-xs">
                                 STEP <b>1</b> OF <b>3</b>
@@ -33,6 +38,7 @@ const CreateAcc = () => {
                                 backgroundColor: "red",
                                 fontWeight: "bold",
                             }}
+                            onClick={buttonHandler}
                         >
                             Next
                         </Button>
@@ -43,4 +49,4 @@ const CreateAcc = () => {
     );
 };
 
-export default CreateAcc;
+export default Registration;

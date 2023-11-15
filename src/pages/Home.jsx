@@ -1,16 +1,12 @@
 import React from "react";
 import { RxDoubleArrowRight } from "react-icons/rx";
-import { TextField, Box, Button, withTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import netImage from "../images/net.png";
+import HomeNav from "../navbars/HomeNav.jsx";
 
 const Home = () => {
   const nav = useNavigate();
-  const loginHandler = () => {
-    nav(`/signin`)
-  };
   const createAccountHandler = () => {
-    nav(`/CreateAcc`)
+    nav(`/registration`)
   };
   return (
     <>
@@ -19,20 +15,7 @@ const Home = () => {
           <div className="w-full">
             <div className="relative flex flex-col w-full">
               <div className="w-full h-[200px] justify-center flex flex-row">
-                <div className="w-[1100px] h-full  flex flex-row justify-between">
-                  <div className="shadow-inner">
-                    <img
-                      src={netImage}
-                      alt="Network"
-                      className="w-[250px] h-[120px]"
-                    />
-                  </div>
-                  <div onClick={loginHandler} className="mt-10 ">
-                    <Button variant="contained">
-                      <h1 className="font-extrabold text-1xl">Sing In</h1>
-                    </Button>
-                  </div>
-                </div>
+                <HomeNav/>
               </div>
               <div className="w-full h-[400px] mt-[200px] absolute grid grid-cols-1 gap-4 place-items-center">
                 <div className="flex flex-col">
@@ -49,7 +32,7 @@ const Home = () => {
                     </h3>
                     <div className="flex mt-4 h-[50px] justify-center">
                       <div className="flex h-full w-[800px]">
-                        <div class="flex flex-col sm:flex-row items-center justify-between w-full h-full">
+                        <div className="flex flex-col sm:flex-row items-center justify-between w-full h-full">
                           <input
                             type="email"
                             name="email"
