@@ -74,7 +74,7 @@ const SignUp = () => {
                             fullWidth
                             sx={{
                               height: "4rem",
-                              fontSize: "1.5rem",
+                              fontSize: "1.3rem",
                               backgroundColor: "red",
                               fontWeight: "bold",
                             }}
