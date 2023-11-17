@@ -2,8 +2,6 @@ import { Button, Checkbox, FormLabel, Link } from "@mui/material";
 import React from 'react'
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import netImage from '../images/net.png';
-import HomeNav from "../navbars/HomeNav.jsx";
 
 const SignIn = () => {
   return (

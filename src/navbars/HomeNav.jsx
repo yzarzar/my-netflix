@@ -1,18 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button } from "@mui/material";
 import {useLocation, useNavigate} from "react-router-dom";
 import netImage from "../images/net.png";
 
 const HomeNav = () => {
+  const [animate,setAnimate] = useState(false)
   const nav = useNavigate();
   const location = useLocation();
   const showItem = location.pathname === '/signIn';
   const loginHandler = () => {
     nav(`/signIn`)
+    setAnimate(true)
   };
   return (
     <>
-      <div className="w-[1250px] h-full  flex flex-row justify-between">
+      <div className={`w-[1250px] h-full  flex flex-row justify-between ${animate ? " work" : " no"}`}>
         {showItem && (
             <div className="shadow-inner">
               <img
@@ -38,6 +40,7 @@ const HomeNav = () => {
               </Button>
             </div>
         )}
+
       </div>
     </>
   )

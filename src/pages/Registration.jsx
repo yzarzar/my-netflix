@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import deviceImage from '../images/optndev.png';
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 
 const Registration = () => {
@@ -9,9 +11,13 @@ const Registration = () => {
     const buttonHandler = () => {
         nav('/signUp/regForm')
     }
+    useEffect(() => {
+        AOS.init();
+    },[])
     return (
         <>
-            <div className='flex flex-row justify-center mt-[15px] w-full h-[567px]'>
+            <div className='flex flex-row justify-center mt-[15px] w-full h-[567px]' data-aos='fade-left' data-aos-easing="ease-out-cubic"
+                 data-aos-duration="500">
                 <div className='w-[340px] h-full bg-white flex flex-col'>
                     <div className='flex flex-row justify-center'>
                         <img src={deviceImage} alt="Devices" className='w-[260px] h-[65px] mt-[100px]'/>

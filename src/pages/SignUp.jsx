@@ -1,13 +1,18 @@
-import React from "react";
-import Navbar from "../navbars/Navbar.jsx";
+import React, {useEffect} from "react";
 import trueIcon from '../images/trueIcon.png'
 import trueIconWithoutCircle from '../images/trueIconWithoutCir.png';
 import {Button} from "@mui/material";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 export const SignUp = () => {
+    useEffect(() => {
+        AOS.init()
+    },[])
     return (
         <>
-            <div className='justify-center w-full h-[618px] flex flex-row justify-center'>
+            <div className='justify-center w-full h-[618px] flex flex-row justify-center' data-aos='fade-left' data-aos-easing="ease-out-cubic"
+                 data-aos-duration="500">
                 <div className='w-[800px] h-[509px] flex flex-row justify-center mt-[35px]'>
                     <div className="h-full w-[340px] flex flex-col">
                         <div className='flex flex-row justify-center mt-[83px]'>

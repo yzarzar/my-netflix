@@ -1,11 +1,15 @@
 import { Button, Box, TextField, Link } from "@mui/material";
-import React from "react";
-import Navbar from "../navbars/Navbar.jsx";
-
+import React, {useEffect} from "react";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 const SignUpForm = () => {
+    useEffect(() => {
+        AOS.init();
+    },[])
     return (
         <>
-            <div className="w-full h-[640px] flex flex-row justify-center">
+            <div className="w-full h-[640px] flex flex-row justify-center" data-aos='fade-left' data-aos-easing="ease-out-cubic"
+                 data-aos-duration="500">
                 <div className="w-[800px] h-[470px] flex flex-row justify-center mt-[35px]">
                     <div className="h-full w-[420px]">
                         <form>
