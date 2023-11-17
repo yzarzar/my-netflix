@@ -1,17 +1,16 @@
 import React from "react";
-import Navbar from "../navbars/Navbar";
 import deviceImage from '../images/optndev.png';
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
+
 const Registration = () => {
     const nav = useNavigate();
     const buttonHandler = () => {
-        nav('/regForm')
+        nav('/signUp/regForm')
     }
     return (
         <>
-            <Navbar/>
             <div className='flex flex-row justify-center mt-[15px] w-full h-[567px]'>
                 <div className='w-[340px] h-full bg-white flex flex-col'>
                     <div className='flex flex-row justify-center'>
@@ -19,7 +18,7 @@ const Registration = () => {
                     </div>
                     <div className='w-full flex flex-col'>
                         <div className='w-full h-full flex flex-row justify-center mt-[40px]'>
-                            <span className="text-xs">
+                            <span className="text-[13px] font-light">
                                 STEP <b>1</b> OF <b>3</b>
                             </span>
                         </div>

@@ -1,12 +1,11 @@
 import React from "react";
 import { RxDoubleArrowRight } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
-import HomeNav from "../navbars/HomeNav.jsx";
 
 const Home = () => {
   const nav = useNavigate();
   const createAccountHandler = () => {
-    nav(`/registration`)
+    nav(`/signUp/registration`)
   };
   return (
     <>
@@ -15,7 +14,6 @@ const Home = () => {
           <div className="w-full">
             <div className="relative flex flex-col w-full">
               <div className="w-full h-[200px] justify-center flex flex-row">
-                <HomeNav/>
               </div>
               <div className="w-full h-[400px] mt-[200px] absolute grid grid-cols-1 gap-4 place-items-center">
                 <div className="flex flex-col">

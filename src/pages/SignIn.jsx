@@ -3,15 +3,13 @@ import React from 'react'
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import netImage from '../images/net.png';
+import HomeNav from "../navbars/HomeNav.jsx";
 
 const SignIn = () => {
   return (
     <>
       <div className="relative flex w-full bg-img">
         <div className=" w-full h-[100px] flex flex-row">
-          <div className="h-full w-[250px] flex flex-col justify-around">
-          <img src={netImage} alt="Network" className="w-[250px] h-[120px]" />
-          </div>
           <div className="absolute flex flex-row justify-around w-full h-full">
             <div className="h-[650px] w-[450px] mt-[100px] rounded-[10px] flex justify-center items-center bg-gray-900/75">
               <div className="h-[550px] w-[333px] flex flex-col">
@@ -95,7 +93,7 @@ const SignIn = () => {
                           borderRadius: "4px", 
                         },
                       }}
-                    /> 
+                    />
                     <h6 className="mt-3 text-xs italic font-light text-sky-400/75">Remember me</h6>
                     <Link href="#levels" level="title-lg">
                       <h1 className="mt-3 ml-[140px] text-xs text-yellow-600">Need help?</h1>
