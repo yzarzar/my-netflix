@@ -4,8 +4,13 @@ import trueIconWithoutCircle from '../images/trueIconWithoutCir.png';
 import {Button} from "@mui/material";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import {useNavigate} from "react-router-dom";
 
 export const SignUp = () => {
+    const nav = useNavigate();
+    const nextBtnHandler = () => {
+        nav('/signUp/planForm');
+    }
     useEffect(() => {
         AOS.init()
     },[])
@@ -50,6 +55,7 @@ export const SignUp = () => {
                                     backgroundColor: "red",
                                     fontWeight: "bold",
                                 }}
+                                onClick={nextBtnHandler}
                             >
                                 Next
                             </Button>

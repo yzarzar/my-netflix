@@ -10,6 +10,7 @@ import {HomeNavRouteGate} from "../navbars/HomeNavRouteGate.jsx";
 import {NavbarRouteGate} from "../navbars/NavbarRouteGate.jsx";
 import Navbar from "../navbars/Navbar.jsx";
 import {SignUp} from "../pages/SignUp.jsx";
+import {PlanForm} from "../pages/PlanForm.jsx";
 
 const Path = () => {
 
@@ -21,7 +22,7 @@ const Path = () => {
                </div>
            </HomeNavRouteGate>
             <NavbarRouteGate>
-                <div className=''>
+                <div>
                     <Navbar/>
                 </div>
             </NavbarRouteGate>
@@ -32,6 +33,7 @@ const Path = () => {
                 <Route path='/signUpForm' element={<SignUpForm/>}/>
                 <Route path='/signUp/regForm' element={<RegForm/>}/>
                 <Route path='/signUp' element={<SignUp/>}/>
+                <Route path='/signUp/planForm' element={<PlanForm/>}/>
             </Routes>
         </>
     )

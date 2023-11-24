@@ -5,7 +5,7 @@ export const NavbarRouteGate = ({children}) => {
     const location = useLocation();
     const [useNav,setUseNav] = useState(false);
     useEffect(() => {
-        if (location.pathname === '/signUp/registration' || location.pathname === '/signUp/regForm' || location.pathname === '/signUp') {
+        if (location.pathname === '/signUp/registration' || location.pathname === '/signUp/regForm' || location.pathname === '/signUp' || location.pathname === '/signUp/planForm') {
             setUseNav(true)
         } else {
             setUseNav(false)
