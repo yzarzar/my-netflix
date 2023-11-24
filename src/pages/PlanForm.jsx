@@ -121,24 +121,24 @@ export const PlanForm = () => {
                         <table className='table-auto leading-[60px]'>
                             <tr className='border-b'>
                                 <td className='mt-[50px] mb-[50px] font-light'>Monthly price</td>
-                                <td className='text-gray-500 text-center'>USD2.99</td>
-                                <td className='text-gray-500 text-center'>USD3.99</td>
-                                <td className='text-gray-500 text-center'>USD7.99</td>
-                                <td className='text-gray-500 text-center'>USD9.99</td>
+                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
                             </tr>
                             <tr className='border-b'>
                                 <td className='mt-[50px] mb-[50px] font-light'>Video quality</td>
-                                <td className='text-gray-500 text-center'>Good</td>
-                                <td className='text-gray-500 text-center'>Good</td>
-                                <td className='text-gray-500 text-center'>Better</td>
-                                <td className='text-gray-500 text-center'>Best</td>
+                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`}>Good</td>
+                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`}>Good</td>
+                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`}>Better</td>
+                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`}>Best</td>
                             </tr>
                             <tr className='border-b'>
                                 <td className='mt-[50px] mb-[50px] font-light'>Video quality</td>
-                                <td className='text-gray-500 text-center'>480p</td>
-                                <td className='text-gray-500 text-center'>720p</td>
-                                <td className='text-gray-500 text-center'>1080p</td>
-                                <td className='text-gray-500 text-center'>4K+HDR</td>
+                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`}>480p</td>
+                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`}>720p</td>
+                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`}>1080p</td>
+                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`}>4K+HDR</td>
                             </tr>
                         </table>
                         <div className='flex flex-row'>
@@ -149,32 +149,32 @@ export const PlanForm = () => {
                                     <ul className='w-[165px] flex-row flex justify-center'>
                                         <li className='flex flex-col'>
                                             <div className='mb-[10px]'>
-                                                <IoPhonePortraitOutline size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Phone</h6>
+                                                <IoPhonePortraitOutline size={30} className={`${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] ${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
                                             </div>
                                             <div>
-                                                <BsTabletLandscape size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Tablet</h6>
+                                                <BsTabletLandscape size={30} className={`${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] ${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
                                             </div>
                                         </li>
                                     </ul>
                                     <ul className='w-[165px] flex-row flex justify-center'>
                                         <li className='flex flex-col'>
                                             <div className='mb-[10px] ml-[20px]'>
-                                                <IoPhonePortraitOutline size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Phone</h6>
+                                                <IoPhonePortraitOutline size={30} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
                                             </div>
                                             <div className='mb-[10px] ml-[20px]'>
-                                                <BsTabletLandscape size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Tablet</h6>
+                                                <BsTabletLandscape size={30} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
                                             </div>
                                             <div className='mb-[10px] ml-[18px]'>
-                                                <GrPersonalComputer size={40} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Computer</h6>
+                                                <GrPersonalComputer size={40} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Computer</h6>
                                             </div>
                                             <div className='ml-[20px]'>
-                                                <RiComputerLine size={40} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px] ml-[13px]'>TV</h6>
+                                                <RiComputerLine size={40} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] ml-[13px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>TV</h6>
                                             </div>
                                         </li>
                                     </ul>
