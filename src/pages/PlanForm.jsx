@@ -62,7 +62,7 @@ export const PlanForm = () => {
                                      onClick={() => handleDivClick('mobile')}>
                                     <div className='w-[120px] h-[100px] mr-[45px] flex justify-center'>
                                         <div className='flex flex-col justify-center'>
-                                            <h6 className='text-white font-bold'>Mobile</h6>
+                                            <h6 className='font-bold text-white'>Mobile</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@ export const PlanForm = () => {
                                      onClick={() => handleDivClick('basic')}>
                                     <div className='w-[120px] h-[100px] mr-[45px] flex justify-center'>
                                         <div className='flex flex-col justify-center'>
-                                            <h6 className='text-white font-bold'>Basic</h6>
+                                            <h6 className='font-bold text-white'>Basic</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ export const PlanForm = () => {
                                      onClick={() => handleDivClick('standard')}>
                                     <div className='w-[120px] h-[100px] mr-[45px] flex justify-center'>
                                         <div className='flex flex-col justify-center'>
-                                            <h6 className='text-white font-bold'>Standard</h6>
+                                            <h6 className='font-bold text-white'>Standard</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@ export const PlanForm = () => {
                                      onClick={() => handleDivClick('premium')}>
                                     <div className='w-[120px] h-[100px] mr-[30px] flex justify-center'>
                                         <div className='flex flex-col justify-center'>
-                                            <h6 className='text-white font-bold'>Premium</h6>
+                                            <h6 className='font-bold text-white'>Premium</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -121,24 +121,24 @@ export const PlanForm = () => {
                         <table className='table-auto leading-[60px]'>
                             <tr className='border-b'>
                                 <td className='mt-[50px] mb-[50px] font-light'>Monthly price</td>
-                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
-                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
-                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
-                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('mobile')}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('basic')}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('standard')}>USD2.99</td>
+                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('premium')}>USD2.99</td>
                             </tr>
                             <tr className='border-b'>
                                 <td className='mt-[50px] mb-[50px] font-light'>Video quality</td>
-                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`}>Good</td>
-                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`}>Good</td>
-                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`}>Better</td>
-                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`}>Best</td>
+                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('mobile')}>Good</td>
+                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('basic')}>Good</td>
+                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('standard')}>Better</td>
+                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('premium')}>Best</td>
                             </tr>
                             <tr className='border-b'>
                                 <td className='mt-[50px] mb-[50px] font-light'>Video quality</td>
-                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`}>480p</td>
-                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`}>720p</td>
-                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`}>1080p</td>
-                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`}>4K+HDR</td>
+                                <td className={`text-center ${isSectionActive('mobile') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('mobile')}>480p</td>
+                                <td className={`text-center ${isSectionActive('basic') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('basic')}>720p</td>
+                                <td className={`text-center ${isSectionActive('standard') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('standard')}>1080p</td>
+                                <td className={`text-center ${isSectionActive('premium') ? 'text-red-500' : 'text-gray-500'}`} onClick={() => handleDivClick('premium')}>4K+HDR</td>
                             </tr>
                         </table>
                         <div className='flex flex-row'>
@@ -146,75 +146,75 @@ export const PlanForm = () => {
                                 <h1 className=' w-[28%]'>Devices you can use to watch</h1>
                                 <div
                                     className='w-[658px] columns-4 absolute flex flex-row justify-between ml-[254px] h-[400px]'>
-                                    <ul className='w-[165px] flex-row flex justify-center'>
-                                        <li className='flex flex-col'>
+                                    <ul className='w-[165px] flex-row flex justify-center' onClick={() => handleDivClick('mobile')}>
+                                        <li className='flex flex-col text-gray-500'>
                                             <div className='mb-[10px]'>
                                                 <IoPhonePortraitOutline size={30} className={`${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}/>
-                                                <h6 className={`text-[12px] ${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
+                                                <h6 className={`text-[12px] text-gray-500 ${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
                                             </div>
                                             <div>
                                                 <BsTabletLandscape size={30} className={`${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}/>
-                                                <h6 className={`text-[12px] ${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
+                                                <h6 className={`text-[12px] text-gray-500 ${isSectionActive('mobile') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
                                             </div>
                                         </li>
                                     </ul>
-                                    <ul className='w-[165px] flex-row flex justify-center'>
-                                        <li className='flex flex-col'>
+                                    <ul className='w-[165px] flex-row flex justify-center' onClick={() => handleDivClick('basic')}>
+                                        <li className='flex flex-col text-gray-500'>
                                             <div className='mb-[10px] ml-[20px]'>
                                                 <IoPhonePortraitOutline size={30} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
-                                                <h6 className={`text-[12px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
+                                                <h6 className={`text-[12px] text-gray-500 ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
                                             </div>
                                             <div className='mb-[10px] ml-[20px]'>
                                                 <BsTabletLandscape size={30} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
-                                                <h6 className={`text-[12px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
+                                                <h6 className={`text-[12px] text-gray-500 ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
                                             </div>
                                             <div className='mb-[10px] ml-[18px]'>
                                                 <GrPersonalComputer size={40} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
-                                                <h6 className={`text-[12px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Computer</h6>
+                                                <h6 className={`text-[12px] text-gray-500 ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>Computer</h6>
                                             </div>
                                             <div className='ml-[20px]'>
                                                 <RiComputerLine size={40} className={`${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}/>
-                                                <h6 className={`text-[12px] ml-[13px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>TV</h6>
+                                                <h6 className={`text-[12px] text-gray-500 ml-[13px] ${isSectionActive('basic') ? 'text-red-500' : 'text - gray - 500'}`}>TV</h6>
                                             </div>
                                         </li>
                                     </ul>
-                                    <ul className='w-[165px] flex-row flex justify-center'>
-                                        <li className='flex flex-col'>
-                                            <div className='mb-[10px] ml-[20px]'>
-                                                <IoPhonePortraitOutline size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Phone</h6>
+                                    <ul className='w-[165px] flex-row flex justify-center' onClick={() => handleDivClick('standard')}>
+                                        <li className='flex flex-col text-gray-500'>
+                                            <div className='mb-[10px] ml-[27px]'>
+                                                <IoPhonePortraitOutline size={30} className={`${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 mr-[13px] ${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
                                             </div>
-                                            <div className='mb-[10px] ml-[20px]'>
-                                                <BsTabletLandscape size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Tablet</h6>
+                                            <div className='mb-[10px] ml-[28px]'>
+                                                <BsTabletLandscape size={30} className={`${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 mr-[13px] ${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
                                             </div>
-                                            <div className='mb-[10px] ml-[18px]'>
-                                                <GrPersonalComputer size={40} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Computer</h6>
+                                            <div className='mb-[10px] ml-[25px]'>
+                                                <GrPersonalComputer size={40} className={`${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 mr-[13px] ${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}>Computer</h6>
                                             </div>
-                                            <div className='ml-[20px]'>
-                                                <RiComputerLine size={40} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px] ml-[13px]'>TV</h6>
+                                            <div className='ml-[28px]'>
+                                                <RiComputerLine size={40} className={`${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 ml-[12px] ${isSectionActive('standard') ? 'text-red-500' : 'text - gray - 500'}`}>TV</h6>
                                             </div>
                                         </li>
                                     </ul>
-                                    <ul className='w-[165px] flex-row flex justify-center'>
-                                        <li className='flex flex-col'>
-                                            <div className='mb-[10px] ml-[20px]'>
-                                                <IoPhonePortraitOutline size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Phone</h6>
+                                    <ul className='w-[165px] flex-row flex justify-center' onClick={() => handleDivClick('premium')}>
+                                        <li className='flex flex-col text-gray-500'>
+                                            <div className='mb-[10px] ml-[30px]'>
+                                                <IoPhonePortraitOutline size={30} className={`${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 mr-[13px] ${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}>Phone</h6>
                                             </div>
-                                            <div className='mb-[10px] ml-[20px]'>
-                                                <BsTabletLandscape size={30} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Tablet</h6>
+                                            <div className='mb-[10px] ml-[30px]'>
+                                                <BsTabletLandscape size={30} className={`${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 mr-[13px] ${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}>Tablet</h6>
                                             </div>
-                                            <div className='mb-[10px] ml-[18px]'>
-                                                <GrPersonalComputer size={40} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px]'>Computer</h6>
+                                            <div className='mb-[10px] ml-[25px]'>
+                                                <GrPersonalComputer size={40} className={`${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 mr-[13px] ${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}>Computer</h6>
                                             </div>
-                                            <div className='ml-[20px]'>
-                                                <RiComputerLine size={40} className='text-gray-500'/>
-                                                <h6 className='text-gray-500 text-[12px] ml-[13px]'>TV</h6>
+                                            <div className='ml-[27px]'>
+                                                <RiComputerLine size={40} className={`${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}/>
+                                                <h6 className={`text-[12px] text-gray-500 ml-[13px] ${isSectionActive('premium') ? 'text-red-500' : 'text - gray - 500'}`}>TV</h6>
                                             </div>
                                         </li>
                                     </ul>

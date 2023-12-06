@@ -19,7 +19,7 @@ export const RegForm = () => {
     try {
       await createUser({ email: formData.email, password: formData.password });
       setFormData({ email: "", password: "" });
-      nav('/signIn');
+      nav('/signUp');
     } catch (error) {
       console.error("Error creating user : ", error);
     }
