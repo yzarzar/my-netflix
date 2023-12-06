@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const nav = useNavigate();
   const createAccountHandler = () => {
-    nav(`/signUp/registration`)
+    nav(`/signUp/registration`);
   };
   return (
     <>
@@ -13,8 +13,7 @@ const Home = () => {
         <div className="w-full h-[700px] bg-img">
           <div className="w-full">
             <div className="relative flex flex-col w-full">
-              <div className="w-full h-[200px] justify-center flex flex-row">
-              </div>
+              <div className="w-full h-[200px] justify-center flex flex-row"></div>
               <div className="w-full h-[400px] mt-[200px] absolute grid grid-cols-1 gap-4 place-items-center">
                 <div className="flex flex-col">
                   <h1 className="text-5xl font-extrabold text-center text-white">
@@ -29,8 +28,8 @@ const Home = () => {
                       membership.
                     </h3>
                     <div className="flex mt-4 h-[50px] justify-center">
-                      <div className="flex h-full w-[800px]">
-                        <div className="flex flex-col sm:flex-row items-center justify-between w-full h-full">
+                      <div className="flex h-full w-[570px]">
+                        <div className="flex flex-col items-center justify-between w-full h-full sm:flex-row">
                           <input
                             type="email"
                             name="email"
@@ -38,21 +37,24 @@ const Home = () => {
                             style={{
                               width: "100%",
                               borderRadius: "0.375rem",
-                              border: "1px solid #ffd700", 
+                              border: "1px solid #ffd700",
                               outline: "none",
                               padding: "0.5rem",
                               height: "60px",
                               backgroundColor: "transparent",
-                              color: "#2d3748", 
+                              color: "#2d3748",
                             }}
                             onFocus={(e) =>
                               (e.currentTarget.style.color = "#ffffff")
-                            } 
+                            }
                             onBlur={(e) =>
                               (e.currentTarget.style.color = "#2d3748")
-                            } 
+                            }
                           />
-                          <button onClick={createAccountHandler} className="w-[350px] ms-3 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex flex-row">
+                          <button
+                            onClick={createAccountHandler}
+                            className="w-[350px] ms-2 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex flex-row"
+                          >
                             <h1 className="mt-[6px] ml-9 text-xl">
                               Get Started{" "}
                             </h1>
@@ -74,7 +76,7 @@ const Home = () => {
           <div className="w-full h-[899px] bg-red-400 flex flex-row justify-center">
             <div className="h-full w-[1130px] bg-white">
               <div className="flex flex-row justify-center w-full bg-yellow-400">
-                <h1 className="text-5xl font-extrabold text-white custom-h1">
+                <h1 className="text-5xl font-extrabold text-white custom-h-1">
                   Frequently Asked Questions
                 </h1>
               </div>
@@ -82,11 +84,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </>
   );
 };
 
 export default Home;
-
-
