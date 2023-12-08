@@ -4,16 +4,17 @@ import Checkbox from "@mui/joy/Checkbox";
 import { useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { useCreateUserMutation } from "/src/services/features/api/userApi";
+import { useCreateUserMutation } from "/src/api/userApi";
+import Cookies from "js-cookie";
 
 export const RegForm = () => {
   const nav = useNavigate();
+  const emailA = JSON.parse(Cookies.get("emailCook"));
   const [createUser, { isLoading }] = useCreateUserMutation("createUser");
   const [formData, setFormData] = useState({
-    email: "",
+    email: `${emailA}`,
     password: "",
   });
-
   const handleCreateNewUser = async (event) => {
     event.preventDefault();
     try {
@@ -25,11 +26,14 @@ export const RegForm = () => {
     }
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-    console.log(formData);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -72,7 +76,7 @@ export const RegForm = () => {
                 >
                   <TextField
                     id="outlined-email-input"
-                    label="Email *"
+                    label="Email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -82,7 +86,7 @@ export const RegForm = () => {
                   />
                   <TextField
                     id="outlined-password-input"
-                    label="Add a password *"
+                    label="Add a password"
                     type="password"
                     name="password"
                     value={formData.password}

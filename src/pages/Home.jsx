@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { RxDoubleArrowRight } from "react-icons/rx";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { emailInput } from "../context/emailSlice";
+import Cookies from "js-cookie";
 
-const Home = () => {
+const Home = ({onSubmit}) => {
+  const [email,setEmail] = useState("");
+ 
+  const dispatch = useDispatch();
   const nav = useNavigate();
-  const createAccountHandler = () => {
-    nav(`/signUp/registration`);
-  };
+
+  const handleSubmit = (e)=>{
+    try {
+      e.preventDefault()
+      dispatch(emailInput({email: email}))
+      nav(`/signUp/registration`);
+    } catch (error) {
+      
+    }
+  }
   return (
     <>
       <div className="flex flex-col w-full bg-gradient-to-r from-blue-500 to-green-500">
@@ -29,10 +42,14 @@ const Home = () => {
                     </h3>
                     <div className="flex mt-4 h-[50px] justify-center">
                       <div className="flex h-full w-[570px]">
-                        <div className="flex flex-col items-center justify-between w-full h-full sm:flex-row">
+                        <form 
+                        onSubmit={handleSubmit} 
+                        className="flex flex-col items-center justify-between w-full h-full sm:flex-row">
                           <input
                             type="email"
                             name="email"
+                            value={email}
+                            onChange={(e)=> setEmail(e.target.value)}
                             placeholder="Enter your email"
                             style={{
                               width: "100%",
@@ -52,7 +69,7 @@ const Home = () => {
                             }
                           />
                           <button
-                            onClick={createAccountHandler}
+                          type="submit"
                             className="w-[350px] ms-2 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex flex-row"
                           >
                             <h1 className="mt-[6px] ml-9 text-xl">
@@ -63,7 +80,7 @@ const Home = () => {
                               className="ml-2 font-extrabold text-white h-[42px]"
                             />
                           </button>
-                        </div>
+                        </form>
                       </div>
                     </div>
                   </div>

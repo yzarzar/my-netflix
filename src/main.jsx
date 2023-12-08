@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { DevSupport } from "@react-buddy/ide-toolbox";
 import { ComponentPreviews, useInitial } from "./dev/index.js";
 import { Provider } from "react-redux";
-import {store} from "./services/features/Store.js";
+import {store} from "./api/store.js";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

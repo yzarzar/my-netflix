@@ -1,9 +1,39 @@
 import { Button, Checkbox, FormLabel, Link } from "@mui/material";
-import React from 'react'
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { useLoginMutation } from "../api/userApi";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+
+  const nav = useNavigate();
+  const [user, { isLoading }] = useLoginMutation("login");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleUserLogin = async (event) => {
+    event.preventDefault();
+    try {
+      await user({ email: formData.email, password: formData.password });
+      setFormData({ email: "", password: "" });
+      nav('/');
+    } catch (error) {
+      console.error("Error user lgoin : ", error);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    console.log(formData);
+  };
+  
   return (
     <>
       <div className="relative flex w-full bg-img">
@@ -17,36 +47,37 @@ const SignIn = () => {
                   </h1>
                   <Box
                     sx={{
-                      display: "grid",boxShadow: 'initial'
+                      display: "grid",
+                      boxShadow: "initial",
                     }}
+                    component='form'
+                    onSubmit={handleUserLogin}
                   >
                     <TextField
                       type="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       label="Email address"
                       variant="outlined"
                       color="warning"
                       helperText="Please enter your email address"
                       FormHelperTextProps={{
-                        style: { color: "white" },
+                        style: { color: "white", marginBottom: 10 },
                       }}
                       InputLabelProps={{
                         style: { color: "white" },
                       }}
                       InputProps={{
-                        style: { color: "white",backgroundColor: '#536A94' },
+                        style: { color: "white", backgroundColor: "#536A94" },
                       }}
                       className="w-full text-lg border-gray-300 rounded-l-[20px] shadow-inner focus:outline-none focus:ring focus:border-blue-300"
                     />
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "grid",
-                    }}
-                  >
                     <TextField
                       type="password"
                       name="password"
+                      value={formData.password}
+                      onChange={handleInputChange}
                       label="Password"
                       variant="outlined"
                       color="warning"
@@ -58,45 +89,53 @@ const SignIn = () => {
                         style: { color: "white" },
                       }}
                       InputProps={{
-                        style: { color: "white",backgroundColor: '#536A94' },
+                        style: { color: "white", backgroundColor: "#536A94" },
+                      }}
+                      sx={{
+                        display: "grid",
                       }}
                       className="w-full text-lg border-gray-300 rounded-l-[20px] shadow-inner focus:outline-none focus:ring focus:border-blue-300"
                     />
-                  </Box>
-                  <Button
-                    variant="contained"
-                    disableElevation
-                    fullWidth
-                    sx={{
-                      height: "60px",
-                      mt: "23px",
-                      mb: "2px",
-                      backgroundColor: '#D80A03',
-                      fontSize: '1rem',
-                      fontWeight: 'bold'
-                    }}
-                  >
-                    Sign In
-                  </Button>
-                  <div className="flex flex-row w-full bg-white rounded-sm">
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      disabled={isLoading}
+                      disableElevation
+                      fullWidth
+                      sx={{
+                        height: "55px",
+                        mt: "23px",
+                        mb: "2px",
+                        backgroundColor: "#D80A03",
+                        fontSize: "1rem",
+                        fontWeight: "bold",
+                      }}
+                    >
+                     {isLoading ? 'Loading...' : 'Sign In'}
+                    </Button>
+                    <div className="flex flex-row w-full bg-white rounded-sm">
                     <Checkbox
                       className="text-red-500"
                       label={FormLabel}
                       defaultChecked
                       size="small"
-                      labelPlacement="start"
                       sx={{
                         "&.MuiIconButton-root": {
                           border: "2px solid white",
-                          borderRadius: "4px", 
+                          borderRadius: "4px",
                         },
                       }}
                     />
-                    <h6 className="mt-3 text-xs italic font-light text-sky-400/75">Remember me</h6>
+                    <h6 className="mt-3 text-xs italic font-light text-sky-400/75">
+                      Remember me
+                    </h6>
                     <Link href="#levels" level="title-lg">
-                      <h1 className="mt-3 ml-[140px] text-xs text-yellow-600">Need help?</h1>
+                      <h1 className="mt-3 ml-[140px] text-xs text-yellow-600">
+                        Need help?
+                      </h1>
                     </Link>
-                  </div>
+                  </div> 
+                  </Box>
                 </div>
                 <div className="w-full">
                   <div className="flex flex-row">
@@ -122,7 +161,7 @@ const SignIn = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
