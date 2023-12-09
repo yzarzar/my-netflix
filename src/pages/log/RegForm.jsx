@@ -9,20 +9,23 @@ import Cookies from "js-cookie";
 
 export const RegForm = () => {
   const nav = useNavigate();
-  const emailA = JSON.parse(Cookies.get("emailCook"));
+  const emailA = Cookies.get("emailCook") ? JSON.parse(Cookies.get("emailCook")) : '';
   const [createUser, { isLoading }] = useCreateUserMutation("createUser");
   const [formData, setFormData] = useState({
     email: `${emailA}`,
     password: "",
   });
+  
   const handleCreateNewUser = async (event) => {
     event.preventDefault();
     try {
       await createUser({ email: formData.email, password: formData.password });
       setFormData({ email: "", password: "" });
-      nav('/signUp');
     } catch (error) {
       console.error("Error creating user : ", error);
+    } finally {
+      Cookies.remove('emailCook');
+      nav('/signUp');
     }
   };
 
@@ -37,6 +40,7 @@ export const RegForm = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  
   return (
     <>
       <div

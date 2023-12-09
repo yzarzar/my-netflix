@@ -1,14 +1,14 @@
 import {useEffect, useState} from "react";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import trueIconWithoutCircle from "../images/trueIconWithoutCir.png";
+import trueIconWithoutCircle from "../../images/trueIconWithoutCir.png";
 import {IoPhonePortraitOutline} from "react-icons/io5";
 import {BsTabletLandscape} from "react-icons/bs";
 import {GrPersonalComputer} from "react-icons/gr";
 import {RiComputerLine} from "react-icons/ri";
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-import triangle from "../images/triangle.png"
+import triangle from "../../images/triangle.png"
 
 export const PlanForm = () => {
     const nav = useNavigate();

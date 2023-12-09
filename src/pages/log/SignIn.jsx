@@ -2,7 +2,7 @@ import { Button, Checkbox, FormLabel, Link } from "@mui/material";
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useLoginMutation } from "../api/userApi";
+import { useLoginMutation } from "../../api/userApi.js";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
@@ -31,7 +31,6 @@ const SignIn = () => {
       ...prevData,
       [name]: value,
     }));
-    console.log(formData);
   };
   
   return (

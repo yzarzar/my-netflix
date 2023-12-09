@@ -1,16 +1,16 @@
 import React from 'react'
 import {Route, Routes} from 'react-router-dom'
-import Home from '../pages/Home'
-import SignIn from '../pages/SignIn'
-import SignUpForm from '../pages/SignUpForm.jsx'
-import Registration from '../pages/./Registration.jsx'
-import {RegForm} from "../pages/RegForm.jsx";
+import Home from '../pages/log/Home.jsx'
+import SignIn from '../pages/log/SignIn.jsx'
+import SignUpForm from '../pages/log/SignUpForm.jsx'
+import Registration from '../pages/log/Registration.jsx'
+import {RegForm} from "../pages/log/RegForm.jsx";
 import HomeNav from "../navbars/HomeNav.jsx";
 import {HomeNavRouteGate} from "../navbars/HomeNavRouteGate.jsx";
 import {NavbarRouteGate} from "../navbars/NavbarRouteGate.jsx";
 import Navbar from "../navbars/Navbar.jsx";
-import {SignUp} from "../pages/SignUp.jsx";
-import {PlanForm} from "../pages/PlanForm.jsx";
+import {SignUp} from "../pages/log/SignUp.jsx";
+import {PlanForm} from "../pages/log/PlanForm.jsx";
 
 const Path = () => {
 

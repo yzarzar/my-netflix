@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import deviceImage from '../images/optndev.png';
+import deviceImage from '../../images/optndev.png';
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import 'aos/dist/aos.css';

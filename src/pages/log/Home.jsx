@@ -2,24 +2,46 @@ import React, { useState } from "react";
 import { RxDoubleArrowRight } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { emailInput } from "../context/emailSlice";
-import Cookies from "js-cookie";
+import { emailInput } from "../../context/emailSlice.js";
+import { RxCrossCircled } from "react-icons/rx";
+import { FastForward } from "@mui/icons-material";
 
-const Home = ({onSubmit}) => {
-  const [email,setEmail] = useState("");
- 
+const Home = () => {
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const dispatch = useDispatch();
   const nav = useNavigate();
 
-  const handleSubmit = (e)=>{
-    try {
-      e.preventDefault()
-      dispatch(emailInput({email: email}))
-      nav(`/signUp/registration`);
-    } catch (error) {
-      
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValidDomain = email.toLowerCase().includes("@gmail.com");
+    return regex.test(email) && isValidDomain;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    if (!email.trim()) {
+      setIsValidEmail(false);
+      setErrorMessage("Email is required");
+    } else if (!validateEmail(email)) {
+      setIsValidEmail(false);
+      setErrorMessage("Please enter a valid email address");
+    } else if(validateEmail(email)) {
+      try {
+        dispatch(emailInput({ email: email }));
+        setIsValidEmail(true);
+        setErrorMessage("");
+        nav(`/signUp/registration`);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
     }
-  }
+  };
+  
+
   return (
     <>
       <div className="flex flex-col w-full bg-gradient-to-r from-blue-500 to-green-500">
@@ -41,15 +63,16 @@ const Home = ({onSubmit}) => {
                       membership.
                     </h3>
                     <div className="flex mt-4 h-[50px] justify-center">
-                      <div className="flex h-full w-[570px]">
-                        <form 
-                        onSubmit={handleSubmit} 
-                        className="flex flex-col items-center justify-between w-full h-full sm:flex-row">
+                      <div className="flex h-full w-[570px] flex-col">
+                        <form
+                          onSubmit={handleSubmit}
+                          className="flex flex-col items-center justify-between w-full h-full sm:flex-row"
+                        >
                           <input
                             type="email"
                             name="email"
                             value={email}
-                            onChange={(e)=> setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             style={{
                               width: "100%",
@@ -69,8 +92,9 @@ const Home = ({onSubmit}) => {
                             }
                           />
                           <button
-                          type="submit"
+                            type="submit"
                             className="w-[350px] ms-2 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex flex-row"
+                            disabled={!isValidEmail && isValidEmail || false}
                           >
                             <h1 className="mt-[6px] ml-9 text-xl">
                               Get Started{" "}
@@ -81,6 +105,14 @@ const Home = ({onSubmit}) => {
                             />
                           </button>
                         </form>
+                        <div className="mt-[8px]">
+                          {!isValidEmail && (
+                            <p className="text-[13px] text-red-500 flex flex-row items-center">
+                              <RxCrossCircled className="text-red-500 mr-[3px] text-[13px]" />
+                              {errorMessage}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
