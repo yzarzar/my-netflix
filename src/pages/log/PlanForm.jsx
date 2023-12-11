@@ -13,7 +13,7 @@ import triangle from "../../images/triangle.png"
 export const PlanForm = () => {
     const nav = useNavigate();
     const nextBtnHandler = () => {
-        nav('/');
+        nav('/signIn');
     }
     useEffect(() => {
         AOS.init();

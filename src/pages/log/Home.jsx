@@ -10,6 +10,7 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
   const nav = useNavigate();
@@ -37,6 +38,8 @@ const Home = () => {
         nav(`/signUp/registration`);
       } catch (error) {
         console.error("Error submitting form:", error);
+      } finally {
+        setIsLoading(false)
       }
     }
   };
@@ -94,10 +97,10 @@ const Home = () => {
                           <button
                             type="submit"
                             className="w-[350px] ms-2 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex flex-row"
-                            disabled={!isValidEmail && isValidEmail || false}
+                            disabled={!isValidEmail && isValidEmail || isLoading}
                           >
                             <h1 className="mt-[6px] ml-9 text-xl">
-                              Get Started{" "}
+                              {isLoading ? 'Loading...' : 'Get Started'}
                             </h1>
                             <RxDoubleArrowRight
                               size={30}

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import netImage from "../images/net.png";
+import { navbarLogic } from './navbarLogic';
 
 const HomeNav = () => {
   const [animate, setAnimate] = useState(false);
   const nav = useNavigate();
-  const location = useLocation();
-  const showItem = location.pathname === '/signIn';
+  const { showItem } = navbarLogic();
 
   const loginHandler = () => {
     nav(`/signIn`);

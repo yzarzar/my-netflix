@@ -11,6 +11,7 @@ import {NavbarRouteGate} from "../navbars/NavbarRouteGate.jsx";
 import Navbar from "../navbars/Navbar.jsx";
 import {SignUp} from "../pages/log/SignUp.jsx";
 import {PlanForm} from "../pages/log/PlanForm.jsx";
+import StartHome from "../pages/start/StartHome.jsx"
 
 const Path = () => {
 
@@ -34,6 +35,7 @@ const Path = () => {
                 <Route path='/signUp/regForm' element={<RegForm/>}/>
                 <Route path='/signUp' element={<SignUp/>}/>
                 <Route path='/signUp/planForm' element={<PlanForm/>}/>
+                <Route path='/home' element={<StartHome/>}/>
             </Routes>
         </>
     )
